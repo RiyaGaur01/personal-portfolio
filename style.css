@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: linear-gradient(120deg, #0d0d15, #050510);
+  overflow-x: hidden;
+}
+
+#starCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px; /* explicitly sets header height */
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+
+header .logo {
+  position: absolute;
+  left: 40px;
+  color: #00ffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: #9ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+
+/* Hero */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 140px 60px;
+  flex-wrap: wrap; /* ensures responsive stacking on smaller screens */
+}
+
+.hero-content { max-width: 600px; }
+.hero-content h1 { font-size: 3rem; color: #00ffff; }
+.cta-btn {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 20px;
+}
+.intro{
+    font-size: 1.5rem;
+}
+.hero-avatar img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+/* About */
+section { padding: 80px 80px; text-align: center; }
+#about p { max-width: 800px; margin: 0 auto 20px; font-size: 1.5rem; }
+.contact-info { list-style: none; padding: 0; }
+.contact-info li { margin: 5px 0; }
+.contact-info a{color: #9ff;  transition: color 0.3s ease;  text-decoration: none; font-size: 1rem;}
+.contact-info a:hover{ color :#ff00ff}
+
+/* === SKILL PERCENTAGE BARS === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.skill-label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #e7efef;
+  text-shadow: 0 0 6px #0f0f0f;
+}
+
+.skill-bar {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2) inset;
+}
+
+.skill-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--fill);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillAnim 1.5s forwards ease-in-out;
+}
+
+@keyframes fillAnim {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.skill-percent {
+  text-align: right;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #ccc;
+}
+
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.project-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+  transition: 0.3s;
+}
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.project-info {
+  padding: 15px;
+}
+.project-info h3 { color: #00ffff; margin-bottom: 10px; }
+.project-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 25px;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.project-btn:hover {
+  background: #00ffff;
+  color: #000;
+}
+
+/* Contact */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+button {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  color: #000;
+  font-weight: 700;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.4);
+}
+.footer-socials a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.footer-socials img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.footer-socials img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #00ffff);
+}
+.typing-line {
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin: 10px 0;
+  min-height: 30px; /* prevents jumpiness when text changes */
+}
+
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: #ff00ff;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
